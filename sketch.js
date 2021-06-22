@@ -19,8 +19,6 @@
      laser = createSprite(215,226,50,50);
      laser.addImage(laserIMG);
      laser.scale = 0.05;
-     laser.visible = false;
-     laser.lifetime = 1000;
  }
  function draw(){
      background(bg);
@@ -43,11 +41,6 @@
      if(keyDown("down")){
         astronaut.y += 5;
         laser.y += 5;
-    }
-  
-     if(keyDown(32)){
-        laser.velocityX = 5;
-        laser.visible = true;
     }
 
      drawSprites();
