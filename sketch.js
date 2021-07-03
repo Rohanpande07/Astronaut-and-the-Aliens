@@ -37,13 +37,6 @@
      astronaut.addAnimation("astronaut6",astronautImg6);
      astronaut.scale = 0.4;
   
-     laser = createSprite(astronaut.x+75,astronaut.y-20,50,50);
-     laser.addImage(laserIMG);
-     laser.scale = 0.04;
-     laser.velocityX = 7;
-     laser.lifetime = 450;
-     laser.visible = false;
-
      alienG = new Group();
      asteroidG = new Group();
  }
@@ -79,11 +72,16 @@
        console.log(mouseY);
 
        if(keyDown(32)){
-        laser.visible = true;
+        laser = createSprite(astronaut.x+75,astronaut.y-20,50,50);
+        laser.addImage(laserIMG);
+        laser.scale = 0.04;
+        laser.velocityX = 7;
+        laser.lifetime = 450;
        }
 
        if(alienG.isTouching(laser)){
            alienG.destroyEach();
+           laser.destroy();
        }
 
        if(alienG.isTouching(astronaut) || asteroidG.isTouching(astronaut)){
