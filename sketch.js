@@ -81,7 +81,6 @@
 
        if(alienG.isTouching(laser)){
            alienG.destroyEach();
-           laser.destroy();
        }
 
        if(alienG.isTouching(astronaut) || asteroidG.isTouching(astronaut)){
